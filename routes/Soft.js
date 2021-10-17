@@ -1,12 +1,12 @@
 import {StyleSheet, View, Text} from 'react-native'
 import * as React from 'react';
 
-export function Tutorial({navigation}) {
-    return (
+export function Soft({navigation}){
+    return(
         <View style={styles.container}>
-            <Text>Tutorial</Text>
+            <Text>Soft Therapy</Text>
         </View>
-      );
+    );
 }
 
 const styles = StyleSheet.create({
