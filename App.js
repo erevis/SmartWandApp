@@ -4,7 +4,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import 'react-native-gesture-handler';
-import { Entypo , AntDesign  } from '@expo/vector-icons';
+import { Entypo , AntDesign , MaterialIcons } from '@expo/vector-icons';
 import {Therapy} from './components/Therapy.js'
 import {Education} from './components/Education.js'
 import {Progress} from './components/Progress.js'
@@ -48,6 +48,16 @@ function Tabs() {
           tabBarLabel: 'Progress',
           tabBarIcon: ({ color }) => (
             <Entypo name="progress-two" size={24} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Account"
+        component={Account}
+        options={{
+          tabBarLabel: 'Account',
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons name="account-circle" size={24} color={color}/> 
           ),
         }}
       />

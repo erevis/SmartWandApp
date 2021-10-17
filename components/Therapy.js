@@ -7,6 +7,9 @@ import { Premade } from '../routes/Premade';
 import { Manual } from '../routes/Manual';
 import { Discovery } from '../routes/Discovery';
 import { Personal } from '../routes/Personal';
+import { Soft } from '../routes/Soft';
+import { Moderate } from '../routes/Moderate';
+import { Firm } from '../routes/Firm';
 
 const Stack = createNativeStackNavigator();
 
@@ -45,11 +48,14 @@ export function Therapy() {
       <View style={{flex:1}}>
         <NavigationContainer independent={true} ref={ref}>
           <Stack.Navigator initialRouteName="Therapy">
-            <Stack.Screen name="Therapy" component={Default} options={{ headerTitle: (props) => <Header name="Therapy"/>}}/>
-            <Stack.Screen name="Premade" component={Premade} options={{ headerTitle: (props) => <Header name="Premade"/>}}/>
+            <Stack.Screen name="Therapy" component={Default}/>
+            <Stack.Screen name="Premade" component={Premade}/>
             <Stack.Screen name="Discovery Mode" component={Discovery}/>
             <Stack.Screen name="Personal Program" component={Personal}/>
             <Stack.Screen name="Manual Session" component={Manual}/>
+            <Stack.Screen name="Soft" component={Soft}/>
+            <Stack.Screen name="Moderate" component={Moderate}/>
+            <Stack.Screen name="Firm" component={Firm}/>
           </Stack.Navigator>
         </NavigationContainer>  
       </View>

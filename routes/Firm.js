@@ -1,12 +1,12 @@
 import {StyleSheet, View, Text} from 'react-native'
 import * as React from 'react';
 
-export function Tutorial({navigation}) {
-    return (
+export function Firm(){
+    return(
         <View style={styles.container}>
-            <Text>Tutorial</Text>
+            <Text>Firm Therapy</Text>
         </View>
-      );
+    );
 }
 
 const styles = StyleSheet.create({

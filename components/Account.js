@@ -1,12 +1,12 @@
-import {StyleSheet, View, Text} from 'react-native'
+import {StyleSheet, View, Text, Button, TouchableOpacity} from 'react-native'
 import * as React from 'react';
 
-export function Tutorial({navigation}) {
-    return (
+export function Account(){
+    return(
         <View style={styles.container}>
-            <Text>Tutorial</Text>
+            <Text>Account</Text>
         </View>
-      );
+    );
 }
 
 const styles = StyleSheet.create({
