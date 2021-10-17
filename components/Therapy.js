@@ -1,6 +1,6 @@
 import {StyleSheet, View, Text, Button, TouchableOpacity} from 'react-native'
 import * as React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons'; 
 import { Premade } from '../routes/Premade';
