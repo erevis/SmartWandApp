@@ -8,8 +8,6 @@ import { Manual } from '../routes/Manual';
 import { Discovery } from '../routes/Discovery';
 import { Personal } from '../routes/Personal';
 
-
-
 const Stack = createNativeStackNavigator();
 
 export function Therapy() {
