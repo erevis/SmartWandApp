@@ -8,6 +8,7 @@ import { Entypo , AntDesign , MaterialIcons } from '@expo/vector-icons';
 import {Therapy} from './components/Therapy.js'
 import {Education} from './components/Education.js'
 import {Progress} from './components/Progress.js'
+import {Account} from './components/Account.js'
 import AuthContext from './components/AuthContext.js';
 import * as SecureStore from 'expo-secure-store';
 
