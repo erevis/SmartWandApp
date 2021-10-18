@@ -7,6 +7,7 @@ import {Therapy} from './components/Therapy.js'
 import {Education} from './components/Education.js'
 import {Progress} from './components/Progress.js'
 import {Account} from './components/Account.js'
+import {COLORS} from './components/Colors.js'
 
 
 
@@ -77,7 +78,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },

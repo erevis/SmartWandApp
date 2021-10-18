@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Overview } from '../routes/Overview';
 import { Challenges } from '../routes/Challenges';
 import { Achievements } from '../routes/Achievements';
+import { COLORS } from './Colors';
 
 
 const Stack = createNativeStackNavigator();
@@ -52,7 +53,7 @@ export function Progress() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.background,
     alignItems: 'center',
     justifyContent: 'center',
   },
