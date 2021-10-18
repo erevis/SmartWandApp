@@ -33,10 +33,38 @@ export function Education() {
       <View style={{flex:1}}>
         <NavigationContainer independent={true} ref={ref}>
           <Stack.Navigator initialRouteName="Education">
-            <Stack.Screen name="Education" component={Default}/>
-            <Stack.Screen name="Anatomy Tutorial" component={Tutorial}/>
-            <Stack.Screen name="Helpful Articles" component={Articles}/>
-            <Stack.Screen name="Forum" component={Forum}/>
+            <Stack.Screen name="Education" component={Default} 
+              options={{
+                headerStyle: {
+                  backgroundColor: COLORS.bottom,
+                },
+                headerTintColor: COLORS.background,
+              }}
+            />
+            <Stack.Screen name="Anatomy Tutorial" component={Tutorial}
+              options={{
+                headerStyle: {
+                  backgroundColor: COLORS.bottom,
+                },
+                headerTintColor: COLORS.background,
+              }}            
+            />
+            <Stack.Screen name="Helpful Articles" component={Articles}
+              options={{
+                headerStyle: {
+                  backgroundColor: COLORS.bottom,
+                },
+                headerTintColor: COLORS.background,
+              }}
+            />
+            <Stack.Screen name="Forum" component={Forum}
+              options={{
+                headerStyle: {
+                  backgroundColor: COLORS.bottom,
+                },
+                headerTintColor: COLORS.background,
+              }}            
+            />
           </Stack.Navigator>
         </NavigationContainer>  
       </View>

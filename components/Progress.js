@@ -33,10 +33,38 @@ export function Progress() {
       <View style={{flex:1}}>
         <NavigationContainer independent={true} ref={ref}>
           <Stack.Navigator initialRouteName="Progress">
-            <Stack.Screen name="Progress" component={Default}/>
-            <Stack.Screen name="Overview" component={Overview}/>
-            <Stack.Screen name="Challenges" component={Challenges}/>
-            <Stack.Screen name="Achievements" component={Achievements}/>
+            <Stack.Screen name="Progress" component={Default}  
+              options={{
+                headerStyle: {
+                  backgroundColor: COLORS.bottom,
+                },
+                headerTintColor: COLORS.background,
+              }}
+            />
+            <Stack.Screen name="Overview" component={Overview}
+              options={{
+                headerStyle: {
+                  backgroundColor: COLORS.bottom,
+                },
+                headerTintColor: COLORS.background,
+              }}
+            />
+            <Stack.Screen name="Challenges" component={Challenges}
+              options={{
+                headerStyle: {
+                  backgroundColor: COLORS.bottom,
+                },
+                headerTintColor: COLORS.background,
+              }}
+            />
+            <Stack.Screen name="Achievements" component={Achievements}
+              options={{
+                headerStyle: {
+                  backgroundColor: COLORS.bottom,
+                },
+                headerTintColor: COLORS.background,
+              }}
+            />
           </Stack.Navigator>
         </NavigationContainer>  
       </View>
