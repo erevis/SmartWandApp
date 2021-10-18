@@ -12,8 +12,6 @@ import { Moderate } from '../routes/Moderate';
 import { Firm } from '../routes/Firm';
 import {COLORS} from './Colors.js';
 
-
-
 const Stack = createNativeStackNavigator();
 
 export function Therapy() {
