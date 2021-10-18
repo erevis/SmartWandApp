@@ -1,6 +1,7 @@
-import {StyleSheet, View, Text, Button} from 'react-native'
+import {StyleSheet, View, Text, TouchableOpacity} from 'react-native'
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { COLORS } from '../components/Colors';
 
 
 
@@ -10,23 +11,17 @@ export function Premade({navigation: {navigate}}) {
 
   return (
     <View style={{flex:1}}>
-          <View style={styles.container}>
-            <Button 
-              title="Soft"
-              color='#2196F3'
-              onPress={() => {navigate('Soft')}}
-            />
-            <Button 
-              title="Moderate"
-              color='#2196F3'
-              onPress={() => {navigate('Moderate')}}
-            />
-            <Button 
-              title="Firm"
-              color='#2196F3'
-              onPress={() => {navigate('Firm')}}
-            />
-        </View>
+      <View style={styles.container}>  
+        <TouchableOpacity style={styles.button} onPress={() => {navigate('Soft')}}>
+          <Text style={styles.text}>Soft</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => {navigate('Moderate')}}>
+          <Text style={styles.text}>Moderate</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => {navigate('Firm')}}>
+          <Text style={styles.text}>Firm</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -34,8 +29,20 @@ export function Premade({navigation: {navigate}}) {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: COLORS.background,
       alignItems: 'center',
       justifyContent: 'center',
     },
+    button: {
+      margin: 10,
+      padding: 10,
+      backgroundColor: COLORS.color4,
+      borderRadius:25,
+      width:'50%',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },  
+    text: {
+      color: COLORS.background,
+    }
 });

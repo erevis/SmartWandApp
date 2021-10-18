@@ -1,4 +1,4 @@
-import {StyleSheet, View, Text, Button, TouchableOpacity, useColorScheme} from 'react-native'
+import {StyleSheet, View, Text, TouchableOpacity, useColorScheme} from 'react-native'
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native';
@@ -20,25 +20,18 @@ export function Therapy() {
   function Default() {
     return(
       <View style={styles.container}>  
-        <Text>Default Page</Text>
         <TouchableOpacity style={styles.button} onPress={() => {ref.current && ref.current.navigate('Premade')}}>
-          <Text>Premade</Text>
+          <Text style={styles.text}>Premade</Text>
         </TouchableOpacity>
-        <Button 
-          title="Manual Session"
-          color={COLORS.color4}
-          onPress={() => {ref.current && ref.current.navigate('Manual Session')}}
-        />
-        <Button 
-          title="Discovery Mode"
-          color={COLORS.color4}
-          onPress={() => {ref.current && ref.current.navigate('Discovery Mode')}}
-        /> 
-        <Button 
-          title="Personal Program"
-          color={COLORS.color4}
-          onPress={() => {ref.current && ref.current.navigate('Personal Program')}}
-        /> 
+        <TouchableOpacity style={styles.button} onPress={() => {ref.current && ref.current.navigate('Manual Session')}}>
+          <Text style={styles.text}>Manual Session</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => {ref.current && ref.current.navigate('Discovery Mode')}}>
+          <Text style={styles.text}>Discovery Mode</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => {ref.current && ref.current.navigate('Personal Program')}}>
+          <Text style={styles.text}>Personal Program</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -47,14 +40,70 @@ export function Therapy() {
       <View style={{flex:1}}>
         <NavigationContainer independent={true} ref={ref}>
           <Stack.Navigator initialRouteName="Therapy">
-            <Stack.Screen name="Therapy" component={Default}/>
-            <Stack.Screen name="Premade" component={Premade}/>
-            <Stack.Screen name="Discovery Mode" component={Discovery}/>
-            <Stack.Screen name="Personal Program" component={Personal}/>
-            <Stack.Screen name="Manual Session" component={Manual}/>
-            <Stack.Screen name="Soft" component={Soft}/>
-            <Stack.Screen name="Moderate" component={Moderate}/>
-            <Stack.Screen name="Firm" component={Firm}/>
+            <Stack.Screen name="Therapy" component={Default} 
+              options={{
+                headerStyle: {
+                  backgroundColor: COLORS.bottom,
+                },
+                headerTintColor: COLORS.background,
+              }}
+            />
+            <Stack.Screen name="Premade" component={Premade}
+              options={{
+                headerStyle: {
+                  backgroundColor: COLORS.bottom,
+                },
+                headerTintColor: COLORS.background,
+              }}
+            />
+            <Stack.Screen name="Discovery Mode" component={Discovery}
+              options={{
+                headerStyle: {
+                  backgroundColor: COLORS.bottom,
+                },
+                headerTintColor: COLORS.background,
+              }}
+            />
+            <Stack.Screen name="Personal Program" component={Personal}
+              options={{
+                headerStyle: {
+                  backgroundColor: COLORS.bottom,
+                },
+                headerTintColor: COLORS.background,
+              }}
+            />
+            <Stack.Screen name="Manual Session" component={Manual}
+              options={{
+                headerStyle: {
+                  backgroundColor: COLORS.bottom,
+                },
+                headerTintColor: COLORS.background,
+              }}
+            />
+            <Stack.Screen name="Soft" component={Soft}
+              options={{
+                headerStyle: {
+                  backgroundColor: COLORS.bottom,
+                },
+                headerTintColor: COLORS.background,
+              }}
+            />
+            <Stack.Screen name="Moderate" component={Moderate}
+              options={{
+                headerStyle: {
+                  backgroundColor: COLORS.bottom,
+                },
+                headerTintColor: COLORS.background,
+              }}
+            />
+            <Stack.Screen name="Firm" component={Firm}
+              options={{
+                headerStyle: {
+                  backgroundColor: COLORS.bottom,
+                },
+                headerTintColor: COLORS.background,
+              }}            
+            />
           </Stack.Navigator>
         </NavigationContainer>  
       </View>
@@ -70,7 +119,15 @@ const styles = StyleSheet.create({
     },
   button: {
     margin: 10,
-    padding: 10
+    padding: 10,
+    backgroundColor: COLORS.color4,
+    borderRadius:25,
+    width:'50%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },  
+  text: {
+    color: COLORS.background,
   }
 });
 

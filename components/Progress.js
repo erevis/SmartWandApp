@@ -1,4 +1,4 @@
-import {StyleSheet, View, Text, Button} from 'react-native'
+import {StyleSheet, View, Text, TouchableOpacity} from 'react-native'
 import * as React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native';
@@ -16,23 +16,16 @@ export function Progress() {
   function Default() {
     return(
       <View style={styles.container}>  
-        <Text>Default Page</Text>
-        <Button 
-          title="Overview"
-          color='#2196F3'
-          onPress={() => {ref.current && ref.current.navigate('Overview')}}
-        />
-        <Button 
-          title="Challenges"
-          color='#2196F3'
-          onPress={() => {ref.current && ref.current.navigate('Challenges')}}
-        />
-        <Button 
-          title="Achievements"
-          color='#2196F3'
-          onPress={() => {ref.current && ref.current.navigate('Achievements')}}
-        /> 
-        </View>
+        <TouchableOpacity style={styles.button} onPress={() => {ref.current && ref.current.navigate('Overview')}}>
+          <Text style={styles.text}>Overview</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => {ref.current && ref.current.navigate('Challenges')}}>
+          <Text style={styles.text}>Challenges</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => {ref.current && ref.current.navigate('Achievements')}}>
+          <Text style={styles.text}>Achievements</Text>
+        </TouchableOpacity> 
+      </View>
     );
   }
 
@@ -57,4 +50,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  button: {
+    margin: 10,
+    padding: 10,
+    backgroundColor: COLORS.color4,
+    borderRadius:25,
+    width:'50%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },  
+  text: {
+    color: COLORS.background,
+  }
 });
