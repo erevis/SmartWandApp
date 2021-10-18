@@ -1,4 +1,4 @@
-import {StyleSheet, View, Text, Button, TouchableOpacity} from 'react-native'
+import {StyleSheet, View, Text, Button, TouchableOpacity, useColorScheme} from 'react-native'
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native';
@@ -10,6 +10,7 @@ import { Personal } from '../routes/Personal';
 import { Soft } from '../routes/Soft';
 import { Moderate } from '../routes/Moderate';
 import { Firm } from '../routes/Firm';
+import {COLORS} from './Colors.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,24 +21,22 @@ export function Therapy() {
     return(
       <View style={styles.container}>  
         <Text>Default Page</Text>
-        <Button 
-          title="Premade"
-          color='#2196F3'
-          onPress={() => {ref.current && ref.current.navigate('Premade')}}
-        />
+        <TouchableOpacity style={styles.button} onPress={() => {ref.current && ref.current.navigate('Premade')}}>
+          <Text>Premade</Text>
+        </TouchableOpacity>
         <Button 
           title="Manual Session"
-          color='#2196F3'
+          color={COLORS.color4}
           onPress={() => {ref.current && ref.current.navigate('Manual Session')}}
         />
         <Button 
           title="Discovery Mode"
-          color='#2196F3'
+          color={COLORS.color4}
           onPress={() => {ref.current && ref.current.navigate('Discovery Mode')}}
         /> 
         <Button 
           title="Personal Program"
-          color='#2196F3'
+          color={COLORS.color4}
           onPress={() => {ref.current && ref.current.navigate('Personal Program')}}
         /> 
       </View>
@@ -65,25 +64,14 @@ export function Therapy() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.background,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  header: {
-    flexDirection: "row"
-  },
-  label: {
-    fontSize: 30,
-  },  
+    },
+  button: {
+    margin: 10,
+    padding: 10
+  }
 });
 
-function Header(props) {
-  return (
-    <View style={styles.header}>
-      <Text style={styles.label}>{props.name}</Text>
-      <TouchableOpacity onPress={()=>{console.log("a")}}>
-        <MaterialIcons name="account-circle" size={40} color="black" style={styles.account}/> 
-      </TouchableOpacity>
-    </View>
-  );
-}
+

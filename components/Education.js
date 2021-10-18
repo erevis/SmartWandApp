@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Tutorial } from '../routes/Tutorial';
 import { Articles } from '../routes/Articles';
 import { Forum } from '../routes/Forum';
+import {COLORS} from './Colors.js';
 
 
 const Stack = createNativeStackNavigator();
@@ -52,7 +53,7 @@ export function Education() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.background,
     alignItems: 'center',
     justifyContent: 'center',
   },

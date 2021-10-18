@@ -1,5 +1,6 @@
 import * as React from 'react';
-import {StyleSheet, View, Text, TextInput, Button} from 'react-native'
+import { StatusBar } from "expo-status-bar";
+import {StyleSheet, View, Text, TextInput, Button, Image, TouchableOpacity} from 'react-native'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -9,6 +10,7 @@ import {Therapy} from './components/Therapy.js'
 import {Education} from './components/Education.js'
 import {Progress} from './components/Progress.js'
 import {Account} from './components/Account.js'
+import {COLORS} from './components/Colors.js'
 import AuthContext from './components/AuthContext.js';
 import * as SecureStore from 'expo-secure-store';
 
@@ -76,23 +78,45 @@ function SignInScreen() {
 
   return (
     <View style={styles.container}>
+      <Image style={styles.image} source={require("./assets/logo.png")} />
+
+      <StatusBar style="auto" />
+
       <TextInput
-        placeholder="Username"
+        placeholder="Email"
+        placeholderTextColor="#f3eed9"
         value={username}
         style={styles.input}
         onChangeText={setUsername}
       />
       <TextInput
         placeholder="Password"
+        placeholderTextColor="#f3eed9"
         value={password}
         style={styles.input}
         onChangeText={setPassword}
-        secureTextEntry
+        secureTextEntry={true}
       />
-      <Button 
-      title="Sign in" 
-      style={styles.input}
-      onPress={() => signIn({ username, password })} />
+      <TouchableOpacity
+        style={styles.forgotButton}
+        onPress={() => {}}
+      >
+        <Text style={styles.forgotText}>Forgot Password?</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.loginButton}
+        onPress={() => signIn({ username, password })}
+      >
+        <Text style={styles.loginText}>LOGIN</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.createButton}
+        onPress={() => {}}
+      >
+        <Text style={styles.signupButton}>Signup</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -186,16 +210,18 @@ export default function App() {
               name="SignIn"
               component={SignInScreen}
               options={{
-                title: 'Smart Wand Companion App',
-                headerTitleAlign: 'center',
+                // title: 'Smart Wand Companion App',
+                // headerTitleStyle: {
+                //   color: '#000000',
+                //   fontWeight: 'bold',
+                // },
+                // headerStyle: {
+                //   backgroundColor: '#f3eed9',
+                // },
+                // headerTitleAlign: 'center',
                 animationTypeForReplace: state.isSignout ? 'pop' : 'push',
-                headerStyle: {
-                  backgroundColor: '#4fe0dc',
-                },
                 headerTintColor: '#fff',
-                headerTitleStyle: {
-                  fontWeight: 'bold',
-                }
+                headerShown: false,
               }}
             />
           ) : (
@@ -214,16 +240,45 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ecf0f1',
+    backgroundColor: COLORS.background,
     alignItems: 'center',
-    justifyContent: 'center',
   },
   input: {
-    width: 200,
-    height: 40,
+    borderRadius: 25,
+    width: "70%",
+    height: 50,
     padding: 10,
-    borderWidth: 1,
+    paddingLeft: 20,
+    borderWidth: 0,
     borderColor: 'black',
-    marginBottom: 10,
+    backgroundColor: '#476971',
+    marginBottom: 15,
+  },
+  loginButton: {
+    width: "70%",
+    borderRadius: 25,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 40,
+    backgroundColor: "#ec6767",
+  },
+  loginText: {},
+  signupButton: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 15,
+  },
+  forgotButton: {
+    height: 30,
+  },
+  forgotText: {
+    fontStyle: 'italic'
+  },
+  image: {
+    marginTop: 60,
+    marginBottom: 40,
+    height: 250,
+    width: 250
   }
 });
