@@ -44,21 +44,21 @@ export function Therapy() {
   }
 
   return (
-      <View style={{flex:1}}>
-        <NavigationContainer independent={true} ref={ref}>
-          <Stack.Navigator initialRouteName="Therapy">
-            <Stack.Screen name="Therapy" component={Default}/>
-            <Stack.Screen name="Premade" component={Premade}/>
-            <Stack.Screen name="Discovery Mode" component={Discovery}/>
-            <Stack.Screen name="Personal Program" component={Personal}/>
-            <Stack.Screen name="Manual Session" component={Manual}/>
-            <Stack.Screen name="Soft" component={Soft}/>
-            <Stack.Screen name="Moderate" component={Moderate}/>
-            <Stack.Screen name="Firm" component={Firm}/>
-          </Stack.Navigator>
-        </NavigationContainer>  
-      </View>
-    )
+    <View style={{flex:1}}>
+      <NavigationContainer independent={true} ref={ref}>
+        <Stack.Navigator initialRouteName="Therapy">
+          <Stack.Screen name="Therapy" component={Default}/>
+          <Stack.Screen name="Premade" component={Premade}/>
+          <Stack.Screen name="Discovery Mode" component={Discovery}/>
+          <Stack.Screen name="Personal Program" component={Personal}/>
+          <Stack.Screen name="Manual Session" component={Manual}/>
+          <Stack.Screen name="Soft" component={Soft}/>
+          <Stack.Screen name="Moderate" component={Moderate}/>
+          <Stack.Screen name="Firm" component={Firm}/>
+        </Stack.Navigator>
+      </NavigationContainer>  
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
