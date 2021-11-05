@@ -8,10 +8,9 @@ export function Overview() {
     return (
       <>
       <View style={styles.container}>
-        <Text>Progress</Text>
+        <Text>Progress Overview</Text>
         </View>
         <View style={styles.container}>
-            <Text style={styles.containerTitle}>Progress Overview</Text>
             <TouchableOpacity style={styles.card}>
                 <View style={styles.progressBar}>
                     <Text> Exercise 1 </Text>
