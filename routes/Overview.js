@@ -3,6 +3,7 @@ import * as React from 'react';
 import {ProgressBar, Colors} from 'react-native-paper'
 import { CurrentRenderContext } from '@react-navigation/core';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { COLORS } from "../components/Colors.js";
 
 export function Overview() {
     return (
@@ -40,7 +41,7 @@ export function Overview() {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: COLORS.background,
       alignItems: 'center',
       justifyContent: 'center',
       flexDirection: 'row',

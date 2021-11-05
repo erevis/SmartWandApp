@@ -22,7 +22,7 @@ function Tabs() {
       initialRouteName="Therapy"
       activeColor="#e9cb1e"
       labelStyle={{ fontSize: 12 }}
-      barStyle={{ backgroundColor: '#202c40' , paddingBottom: 0}}
+      barStyle={{ backgroundColor: COLORS.bottom , paddingBottom: 0}}
     >
       <Tab.Screen
         name="Therapy"
