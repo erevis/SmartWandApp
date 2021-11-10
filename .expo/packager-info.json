@@ -1,0 +1,10 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": null,
+  "packagerPort": 19000,
+  "webpackServerPort": 19006,
+  "expoServerNgrokUrl": "https://2x-8f6.erevis.smart-wand-app.exp.direct",
+  "packagerNgrokUrl": "https://packager.2x-8f6.erevis.smart-wand-app.exp.direct",
+  "ngrokPid": 2604,
+  "packagerPid": null
+}
