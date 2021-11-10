@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StatusBar } from "expo-status-bar";
-import {StyleSheet, View, Text, TextInput, Button, Image, TouchableOpacity} from 'react-native'
+import {StyleSheet, View, Text, TextInput, Button, Image, TouchableOpacity, Animated, Dimensions, NativeModules} from 'react-native'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -13,10 +13,13 @@ import {Account} from './components/Account.js'
 import {COLORS} from './components/Colors.js'
 import AuthContext from './components/AuthContext.js';
 import * as SecureStore from 'expo-secure-store';
+import {Square1, Square2, Square3} from './components/Background.js';
+
 
 const Tab = createMaterialBottomTabNavigator();
+const {width, height} = Dimensions.get('screen');
 
-function Tabs() {
+export function Tabs() {
   return (
     <Tab.Navigator
       initialRouteName="Therapy"
@@ -77,21 +80,35 @@ function SignInScreen() {
   const { signIn } = React.useContext(AuthContext);
 
   return (
-    <View style={styles.container}>
+    <View style={styles.background}>
+
+    <Square1 />
+    <Square2 />
+    <Square3 />
+{/* <Svg height="100" width="100">
+  <Rect x="0" y="0" width="100" height="100" fill="black" />
+  <Circle cx="50" cy="50" r="30" fill="yellow" />
+  <Circle cx="40" cy="40" r="4" fill="black" />
+  <Circle cx="60" cy="40" r="4" fill="black" />
+  <Path d="M 40 60 A 10 10 0 0 0 60 60" stroke="black" />
+</Svg> */}
+
       <Image style={styles.image} source={require("./assets/logo.png")} />
 
       <StatusBar style="auto" />
 
       <TextInput
         placeholder="Email"
-        placeholderTextColor="#f3eed9"
+        placeholderTextColor={COLORS.color4}
+        fontWeight='bold'
         value={username}
         style={styles.input}
         onChangeText={setUsername}
       />
       <TextInput
         placeholder="Password"
-        placeholderTextColor="#f3eed9"
+        placeholderTextColor={COLORS.color4}
+        fontWeight='bold'
         value={password}
         style={styles.input}
         onChangeText={setPassword}
@@ -238,6 +255,11 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    backgroundColor: COLORS.color6,
+    alignItems: 'center',
+  },
   container: {
     flex: 1,
     backgroundColor: COLORS.background,
@@ -251,7 +273,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     borderWidth: 0,
     borderColor: 'black',
-    backgroundColor: '#476971',
+    backgroundColor: COLORS.color2,
     marginBottom: 15,
     color: '#FFFFFF'
   },

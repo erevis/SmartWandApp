@@ -7,42 +7,41 @@ import {COLORS} from './Colors.js';
 
 const Stack = createStackNavigator();
 
-export function Account(){
-    const ref = React.useRef(null);
+export function Account() {
+  const ref = React.useRef(null);
 
-    /* <Stack.Screen
-    name="Home"
-    component={Tabs}
-    options={{headerShown: false}}
-    /> */
-    
-    function Default() {
-        return(
-            <View style={styles.container}>  
-            <Text>Default Page</Text>
+  /* <Stack.Screen
+  name="Home"
+  component={Tabs}
+  options={{headerShown: false}}
+  /> */
+  
+  function Default() {
+      return(
+        <View style={styles.container}>  
+          <Text>Default Page</Text>
             <TouchableOpacity style={styles.button} onPress={() => {ref.current && ref.current.navigate('Premade')}}>
                 <Text>Premade</Text>
             </TouchableOpacity>
-            </View>
-        );
-    }
-
-    return (
-        <View style={{flex:1}}>
-          <NavigationContainer independent={true} ref={ref}>
-            <Stack.Navigator initialRouteName="Therapy">
-              <Stack.Screen name="Therapy" component={Default}/>
-            </Stack.Navigator>
-          </NavigationContainer>  
         </View>
-      )
+      );
+  }
+
+  return (
+    <View style={{flex:1}}>
+      <NavigationContainer independent={true} ref={ref}>
+        <Stack.Navigator initialRouteName="Therapy">
+          <Stack.Screen name="Therapy" component={Default}/>
+        </Stack.Navigator>
+      </NavigationContainer>  
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: COLORS.background, 
-      alignItems: 'center',
-    },
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.background, 
+    alignItems: 'center',
+  },
 });
-  
