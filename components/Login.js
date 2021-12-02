@@ -9,12 +9,15 @@ import AuthContext from './AuthContext.js';
 import * as SecureStore from 'expo-secure-store';
 import { Square1, Square2, Square3 } from './Background.js';
 import Tabs from './Tabs.js'
+import APIKit from '../shared/APIKit.js';
+import { setClientToken } from '../shared/APIKit.js'
+import axios from 'axios';
 
 function SignInScreen() {
-  const [username, setUsername] = React.useState('');
+  const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-  const { signIn } = React.useContext(AuthContext);
+  const { signIn, signUp, signOut } = React.useContext(AuthContext);
 
   return (
     <View style={styles.background}>
@@ -31,9 +34,9 @@ function SignInScreen() {
         placeholder="Email"
         placeholderTextColor={COLORS.color4}
         fontWeight='bold'
-        value={username}
+        value={email}
         style={styles.input}
-        onChangeText={setUsername}
+        onChangeText={setEmail}
       />
       <TextInput
         placeholder="Password"
@@ -53,14 +56,14 @@ function SignInScreen() {
 
       <TouchableOpacity
         style={styles.loginButton}
-        onPress={() => signIn({ username, password })}
+        onPress={() => signIn({ email, password })}
       >
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.createButton}
-        onPress={() => { }}
+        onPress={() => signUp({ email, password })}
       >
         <Text style={styles.signupButton}>Signup</Text>
       </TouchableOpacity>
@@ -99,7 +102,6 @@ export default function Login() {
             ...prevState,
             userToken: action.token,
             isSignout: false,
-            userToken: null,
             isLoading: false,
           };
       }
@@ -114,7 +116,7 @@ export default function Login() {
   React.useEffect(() => {
     // Fetch the token from storage then navigate to our appropriate place
     const bootstrapAsync = async () => {
-      let userToken;
+      let userToken = null;
 
       try {
         userToken = await SecureStore.getItemAsync('userToken');
@@ -126,8 +128,7 @@ export default function Login() {
       if (userToken != null) {
         // This will switch to the App screen or Auth screen and this loading
         // screen will be unmounted and thrown away.
-
-        // dispatch({ type: 'RESTORE_TOKEN', token: userToken });
+        dispatch({ type: 'RESTORE_TOKEN', token: userToken });
       }
     };
 
@@ -137,42 +138,80 @@ export default function Login() {
   const authContext = React.useMemo(
     () => ({
       signIn: async data => {
-        // In a production app, we need to send some data (usually username, password) to server and get a token
-        // We will also need to handle errors if sign in failed
-        // After getting token, we need to persist the token using `SecureStore`
-        // In the example, we'll use a dummy token
-        
-        
-        let userToken;
-        let userName = null;
-        console.log(data)
+        const email = data.email;
+        const password = data.password;
+        const payload = {
+          'email': email, 
+          'password': password
+        }
+        let token = null;
 
-        if (userName == null) {
-          try {
-            userToken = 'abc'
-            SecureStore.setItemAsync('userToken', userToken)
-          } catch (e) {
-            console.log(e)
+        try {
+          const res = await APIKit.post('/api/token/', payload)
+          
+          if (res.status == 200) {
+            console.log(res)
+            const data = res.data;
+            token = data.access
+            try {
+              SecureStore.setItemAsync('userToken', token)
+            } catch (e) {
+              console.log(e)
+            }
+            setClientToken(data.token);
+          } else {
+            
+          }
+        } catch (err) {
+          if (err.response) {
+            // The request was made and the server responded with a status code
+            // that falls out of the range of 2xx
+            console.log(err.response.data);
+            console.log(err.response.status);
+            console.log(err.response.headers);
+          } else if (err.request) {
+            // The request was made but no response was received
+            // `err.request` is an instance of XMLHttpRequest in the browser and an instance of
+            // http.ClientRequest in node.js
+            console.log(err.request);
+          } else {
+            // Something happened in setting up the request that triggered an Error
+            console.log('Error', err.message);
           }
         }
 
-        // dispatch({ type: 'SIGN_IN', token: userToken });
+        dispatch({ type: 'SIGN_IN', token: token });
       },
       signUp: async data => {
-        // In a production app, we need to send user data to server and get a token
-        // We will also need to handle errors if sign up failed
-        // After getting token, we need to persist the token using `SecureStore`
-        // In the example, we'll use a dummy token
+        const email = data.email;
+        const password = data.password;
+        const payload = {
+          'email': email, 
+          'password': password
+        }
 
-        let userToken;
-        let userName = null;
+        let userToken = null
 
-        if (userName == null) {
-          try {
-            userToken = ''
-            SecureStore.setItemAsync('userToken', userToken)
-          } catch (e) {
-            console.log(e)
+        try {
+          const res = await APIKit.post('/account/api/register', payload)
+          console.log(res)
+          const data = res.data;
+
+        } catch (err) {
+          if (err.response) {
+            // The request was made and the server responded with a status code
+            // that falls out of the range of 2xx
+            console.log(err.response.data);
+            console.log(err.response.status);
+            console.log(err.response.headers);
+          } else if (err.request) {
+            // The request was made but no response was received
+            // `err.request` is an instance of XMLHttpRequest in the browser and an instance of
+            // http.ClientRequest in node.js
+            console.log(err.request);
+          } else {
+            // Something happened in setting up the request that triggered an Error
+            console.log('Error', err.message);
           }
         }
 

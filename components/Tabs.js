@@ -3,6 +3,7 @@ import { Therapy } from './Therapy.js'
 import { Education } from './Education.js'
 import { Progress } from './Progress.js'
 import { Account } from './Account.js'
+import { COLORS } from './Colors.js'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { Entypo, AntDesign, MaterialIcons } from '@expo/vector-icons';
 
