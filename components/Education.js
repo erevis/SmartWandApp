@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Tutorial } from '../routes/Tutorial';
 import { Articles } from '../routes/Articles';
 import { Forum } from '../routes/Forum';
+import { Thread } from '../routes/Thread.js';
 import {COLORS} from './Colors.js';
 
 
@@ -64,6 +65,14 @@ export function Education() {
                 },
                 headerTintColor: COLORS.background,
               }}            
+            />
+            <Stack.Screen name="Thread" component={Thread}
+              options={{
+                headerStyle: {
+                  backgroundColor: COLORS.bottom,
+                },
+                headerTintColor: COLORS.background,
+              }}
             />
           </Stack.Navigator>
         </NavigationContainer>  
