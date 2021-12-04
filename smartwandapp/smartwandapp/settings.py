@@ -86,7 +86,7 @@ REST_FRAMEWORK = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'sqlite',
+        'ENGINE': 'sqlite3',
         'NAME': 'smartwanddb',
     }
 }
