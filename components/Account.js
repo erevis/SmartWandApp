@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { COLORS } from './Colors.js';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Login from './Login.js'
 
 const Stack = createStackNavigator();
 
@@ -32,6 +33,9 @@ export function Account() {
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => { ref.current && ref.current.navigate('Contact Us') }}>
           <Text>Contact Us</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => {DevSettings.reload() }}>
+          <Text>Log Out</Text>
         </TouchableOpacity>
       </View>
     );

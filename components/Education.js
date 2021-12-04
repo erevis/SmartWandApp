@@ -17,6 +17,11 @@ export function Education() {
   function Default() {
     return(
       <View style={styles.container}>  
+      <View style={styles.card}>
+          <Text style={styles.title}>Education</Text>
+
+          <View style={{flexDirection: 'row'}}>
+            <View>
         <TouchableOpacity style={styles.button} onPress={() => {ref.current && ref.current.navigate('Anatomy Tutorial')}}>
           <Text style={styles.text}>Anatomy Tutorial</Text>
         </TouchableOpacity>
@@ -26,6 +31,9 @@ export function Education() {
         <TouchableOpacity style={styles.button} onPress={() => {ref.current && ref.current.navigate('Forum')}}>
           <Text style={styles.text}>Forum</Text>
         </TouchableOpacity>
+        </View>  
+          </View>
+          </View>
       </View>
     );
   }
@@ -37,7 +45,7 @@ export function Education() {
             <Stack.Screen name="Education" component={Default} 
               options={{
                 headerStyle: {
-                  backgroundColor: COLORS.bottom,
+                  backgroundColor:'#586170',
                 },
                 headerTintColor: COLORS.background,
               }}
@@ -45,7 +53,7 @@ export function Education() {
             <Stack.Screen name="Anatomy Tutorial" component={Tutorial}
               options={{
                 headerStyle: {
-                  backgroundColor: COLORS.bottom,
+                  backgroundColor: '#586170',
                 },
                 headerTintColor: COLORS.background,
               }}            
@@ -53,7 +61,7 @@ export function Education() {
             <Stack.Screen name="Helpful Articles" component={Articles}
               options={{
                 headerStyle: {
-                  backgroundColor: COLORS.bottom,
+                  backgroundColor: '#586170',
                 },
                 headerTintColor: COLORS.background,
               }}
@@ -61,7 +69,7 @@ export function Education() {
             <Stack.Screen name="Forum" component={Forum}
               options={{
                 headerStyle: {
-                  backgroundColor: COLORS.bottom,
+                  backgroundColor: '#586170',
                 },
                 headerTintColor: COLORS.background,
               }}            
@@ -69,7 +77,7 @@ export function Education() {
             <Stack.Screen name="Thread" component={Thread}
               options={{
                 headerStyle: {
-                  backgroundColor: COLORS.bottom,
+                  backgroundColor:'#586170',
                 },
                 headerTintColor: COLORS.background,
               }}
@@ -83,20 +91,44 @@ export function Education() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: '#586170',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingBottom: 50,
+  },
+  card: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '85%',
+    height: '95%',
+    borderRadius: 45,
+    borderWidth: 0,
+    backgroundColor: '#9095a0',
+    borderColor: COLORS.bottom,
   },
   button: {
     margin: 10,
     padding: 10,
-    backgroundColor: COLORS.color4,
-    borderRadius:25,
-    width:'50%',
+    borderRadius: 15,
+    borderWidth: 0,
+    borderColor: COLORS.bottom,
+    width: 140,
+    height: 90,
     alignItems: 'center',
     justifyContent: 'center',
-  },  
+    backgroundColor: '#e3e5e7'
+  },
   text: {
-    color: COLORS.background,
+    color: COLORS.bottom,
+    fontSize: 20,
+    textAlign: 'center',
+  },
+  title: {
+    marginBottom: 50,
+    width: '100%',
+    color: COLORS.white,
+    fontSize: 45,
+    fontWeight: "bold",
+    textAlign: 'center',
   }
 });

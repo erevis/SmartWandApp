@@ -21,7 +21,6 @@ function SignInScreen() {
 
   return (
     <View style={styles.background}>
-
       <Square1 />
       <Square2 />
       <Square3 />
@@ -56,7 +55,9 @@ function SignInScreen() {
 
       <TouchableOpacity
         style={styles.loginButton}
-        onPress={() => signIn({ email, password })}
+        onPress={() => {
+          signIn({ email, password })}
+        }
       >
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
@@ -74,6 +75,8 @@ function SignInScreen() {
 const Stack = createStackNavigator();
 
 export default function Login() {
+  let userToken = null
+
   const [state, dispatch] = React.useReducer(
     (prevState, action) => {
       switch (action.type) {
@@ -116,19 +119,18 @@ export default function Login() {
   React.useEffect(() => {
     // Fetch the token from storage then navigate to our appropriate place
     const bootstrapAsync = async () => {
-      let userToken = null;
 
       try {
         userToken = await SecureStore.getItemAsync('userToken');
       } catch (e) {
         console.log(e)
       }
-
+      
       // After restoring token, we may need to validate it in production apps
       if (userToken != null) {
         // This will switch to the App screen or Auth screen and this loading
         // screen will be unmounted and thrown away.
-        dispatch({ type: 'RESTORE_TOKEN', token: userToken });
+        dispatch({ type: 'RESTORE_TOKEN', token: 'dummy-auth-token' });
       }
     };
 
@@ -138,49 +140,49 @@ export default function Login() {
   const authContext = React.useMemo(
     () => ({
       signIn: async data => {
-        const email = data.email;
-        const password = data.password;
-        const payload = {
-          'email': email, 
-          'password': password
-        }
-        let token = null;
+        // const email = data.email;
+        // const password = data.password;
+        // const payload = {
+        //   'email': email, 
+        //   'password': password
+        // }
+        // let token = null;
 
-        try {
-          const res = await APIKit.post('/api/token/', payload)
+        // try {
+        //   const res = await APIKit.post('/api/token/', payload)
           
-          if (res.status == 200) {
-            console.log(res)
-            const data = res.data;
-            token = data.access
-            try {
-              SecureStore.setItemAsync('userToken', token)
-            } catch (e) {
-              console.log(e)
-            }
-            setClientToken(data.token);
-          } else {
+        //   if (res.status == 200) {
+        //     console.log(res)
+        //     const data = res.data;
+        //     token = data.access
+        //     try {
+        //       SecureStore.setItemAsync('userToken', token)
+        //     } catch (e) {
+        //       console.log(e)
+        //     }
+        //     setClientToken(data.token);
+        //   } else {
             
-          }
-        } catch (err) {
-          if (err.response) {
-            // The request was made and the server responded with a status code
-            // that falls out of the range of 2xx
-            console.log(err.response.data);
-            console.log(err.response.status);
-            console.log(err.response.headers);
-          } else if (err.request) {
-            // The request was made but no response was received
-            // `err.request` is an instance of XMLHttpRequest in the browser and an instance of
-            // http.ClientRequest in node.js
-            console.log(err.request);
-          } else {
-            // Something happened in setting up the request that triggered an Error
-            console.log('Error', err.message);
-          }
-        }
-
-        dispatch({ type: 'SIGN_IN', token: token });
+        //   }
+        // } catch (err) {
+        //   if (err.response) {
+        //     // The request was made and the server responded with a status code
+        //     // that falls out of the range of 2xx
+        //     console.log(err.response.data);
+        //     console.log(err.response.status);
+        //     console.log(err.response.headers);
+        //   } else if (err.request) {
+        //     // The request was made but no response was received
+        //     // `err.request` is an instance of XMLHttpRequest in the browser and an instance of
+        //     // http.ClientRequest in node.js
+        //     console.log(err.request);
+        //   } else {
+        //     // Something happened in setting up the request that triggered an Error
+        //     console.log('Error', err.message);
+        //   }
+        // }
+        userToken = 'abc'
+        dispatch({ type: 'SIGN_IN', token: 'dummy-auth-token' });
       },
       signUp: async data => {
         const email = data.email;
@@ -269,12 +271,7 @@ export default function Login() {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: COLORS.color6,
-    alignItems: 'center',
-  },
-  container: {
-    flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: '#c7cacf',
     alignItems: 'center',
   },
   input: {
@@ -287,7 +284,7 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     backgroundColor: COLORS.color2,
     marginBottom: 15,
-    color: '#FFFFFF'
+    color: COLORS.background
   },
   loginButton: {
     width: "70%",
