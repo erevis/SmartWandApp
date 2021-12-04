@@ -6,7 +6,9 @@ import { Card } from 'react-native-elements';
 import {
   LineChart,
   ProgressChart,
+  ContributionGraph,
 } from 'react-native-chart-kit';
+const screenWidth = Dimensions.get("window").width;
 
 export function Overview() {
 
@@ -21,21 +23,23 @@ export function Overview() {
           scrollEventThrottle={16}
         >
           <View>
+
+          <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 20 }}>
+            <Text style={{ marginTop: 20, textAlign: 'center', fontSize: 20, marginBottom: 40}}>
+              Ongoing Exercises
+            </Text>
+          </View>
             <TouchableOpacity>
+            
               <Card style={styles.cards}>
-
-                <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 20 }}>
-                  <Text style={{ paddingHorizontal: 20, textAlign: 'center' }}>
-                    Ongoing Exercise
-                  </Text>
-
-                </View>
                 <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10, paddingBottom: 10, }}>
-                  <Text style={{ paddingHorizontal: 20, textAlign: 'center' }} > Exercise 1 </Text>
+                  <Text style={{ marginBottom: 10, textAlign: 'center' }} > Exercise 1 - 12/2</Text>
                 </View>
 
-                <View style={styles.progressBar}>
-                  <ProgressBar progress={0.65} color={Colors.blue800} />
+                <View >
+                  <ProgressBar progress={0.65} color={'#202C40'}
+    width={'100%'}
+    />
                 </View>
 
 
@@ -43,7 +47,24 @@ export function Overview() {
                   <Text style={{ paddingHorizontal: 20, textAlign: 'center' }}> 65% Complete </Text>
                 </View>
               </Card>
+            </TouchableOpacity>
 
+            <TouchableOpacity>
+              <Card style={styles.cards}>
+
+                <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10, paddingBottom: 10, }}>
+                  <Text style={{ marginBottom: 10, textAlign: 'center' }} > Exercise 2 - 12/1</Text>
+                </View>
+
+                <View >
+                  <ProgressBar progress={0.65} color={'#202C40'} />
+                </View>
+
+
+                <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10, paddingBottom: 10, }}>
+                  <Text style={{ paddingHorizontal: 20, textAlign: 'center' }}> 35% Complete </Text>
+                </View>
+              </Card>
             </TouchableOpacity>
 
           </View>
@@ -59,54 +80,80 @@ export function Overview() {
               </View>
               <View style={styles.container}>
                 <View style={styles.circle_active}>
-                  <Text style={{ fontSize: 24 }} > M </Text>
+                  <Text style={{color:'white', fontSize: 24, textAlign: 'center', }} > M </Text>
                 </View>
                 <View style={styles.circle_inactive}>
-                  <Text style={{ fontSize: 24 }} > T </Text>
+                  <Text style={{color:'#202C40', fontSize: 24, textAlign: 'center', }} > T </Text>
                 </View>
                 <View style={styles.circle_active}>
-                  <Text style={{ fontSize: 24 }} > W </Text>
+                  <Text style={{color:'white', fontSize: 24, textAlign: 'center', }} > W </Text>
                 </View>
                 <View style={styles.circle_active}>
-                  <Text style={{ fontSize: 24 }} > T </Text>
+                  <Text style={{color:'white', fontSize: 24, textAlign: 'center', }} > T </Text>
                 </View>
                 <View style={styles.circle_active}>
-                  <Text style={{ fontSize: 24 }} > F </Text>
+                  <Text style={{color:'white', fontSize: 24, textAlign: 'center', }} > F </Text>
                 </View>
                 <View style={styles.circle_inactive}>
-                  <Text style={{ fontSize: 24 }} > S </Text>
+                  <Text style={{color:'#202C40', fontSize: 24, textAlign: 'center', }} > S </Text>
                 </View>
                 <View style={styles.circle_inactive}>
-                  <Text style={{ fontSize: 24 }} > S </Text>
+                  <Text style={{color:'#202C40', fontSize: 24, textAlign: 'center', }} > S </Text>
                 </View>
               </View>
 
               <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10, paddingBottom: 10, }}>
-                <Text style={{ paddingHorizontal: 20, textAlign: 'center' }}> Monthky </Text>
+                <Text style={{ paddingHorizontal: 20, textAlign: 'center', }}> Monthly </Text>
               </View>
-              <View style={styles.container}>
-                
-              </View>
+                <ContributionGraph
+                  values={[
+                    { date: '2021-10-02', count: 1 },
+                    { date: '2021-10-03', count: 2 },
+                    { date: '2021-10-04', count: 3 },
+                    { date: '2021-11-09', count: 4 },
+                    { date: '2021-11-12', count: 5 },
+                    { date: '2021-11-16', count: 2 },
+                    { date: '2021-12-17', count: 3 },
+                    { date: '2021-12-21', count: 2 },
+                    { date: '2021-11-22', count: 4 },
+                    { date: '2021-12-25', count: 2 },
+                    { date: '2021-12-30', count: 4 },
+                  ]}
+                  endDate={new Date('2021-12-31')}
+                  numDays={93}
+                  width={screenWidth - 60}
+                  height={220}
+                  chartConfig={{
+                    backgroundColor: '#1cc910',
+                    backgroundGradientFrom: '#eff3ff',
+                    backgroundGradientTo: '#efefef',
+                    decimalPlaces: 2,
+                    color: (opacity = 1) => `rgba(32, 44, 64, ${opacity})`,
+                    style: {
+                      borderRadius: 16,
+                    },
+                  }}
+                />
             </Card>
           </View>
 
           <View>
             <Card style={styles.cards}>
 
-              <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10, paddingBottom: 10, marginBottom: 5, width: 612, height: 70, borde: 5, }}>
-                <Text style={{ paddingHorizontal: 20, textAlign: 'center' }}> Pain Level </Text>
+              <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10, paddingBottom: 10, }}>
+                <Text style={{ paddingHorizontal: 20, textAlign: 'center' }} > Pain Level </Text>
               </View>
               <View>
                 <LineChart
                   data={{
                     labels: [
-                      'Monday',
-                      'Tuesday',
-                      'Wednesday',
-                      'Thursday',
-                      'Friday',
-                      'Saturday',
-                      'Sunday',
+                      'Mon',
+                      'Tue',
+                      'Wed',
+                      'Thu',
+                      'Fri',
+                      'Sat',
+                      'Sun',
                     ],
                     datasets: [
                       {
@@ -115,7 +162,7 @@ export function Overview() {
                       },
                     ],
                   }}
-                  width={Dimensions.get('window').width - 80}
+                  width={screenWidth - 75}
                   height={240}
                   chartConfig={{
                     backgroundColor: '#1cc910',
@@ -153,6 +200,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
+    
   },
   pageTitle: {
     fontSize: 24,
@@ -166,18 +214,18 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 5,
   },
-  scrollView: {
-    backgroundColor: '#ADD8E6',
-    paddingLeft: 20,
-    horizocntal: 'true',
-    automaticallyAdjustInsets: 'true',
-    paginEnabled: 'true',
-    scrollEnabled: 'true',
-    declerationRate: '0',
-    snapToInterval: 200,
-    snapToAlignment: 'center',
+  // scrollView: {
+  //   backgroundColor: '#ADD8E6',
+  //   paddingLeft: 20,
+  //   horizocntal: 'true',
+  //   automaticallyAdjustInsets: 'true',
+  //   paginEnabled: 'true',
+  //   scrollEnabled: 'true',
+  //   declerationRate: '0',
+  //   snapToInterval: 200,
+  //   snapToAlignment: 'center',
 
-  },
+  // },
   cards: {
     //display: 'flex',
     alignItems: 'center',
@@ -186,7 +234,6 @@ const styles = StyleSheet.create({
     height: 130,
     marginBottom: 10,
     marginLeft: 20,
-    borderWidth: 0.5,
     shadowColor: '#000',
     shadowOpacity: 1,
     shadowOffset: {
@@ -195,11 +242,11 @@ const styles = StyleSheet.create({
     }
   },
   circle_active: {
-    width: 70,
-    height: 70,
-    borderRadius: 70 / 2,
-    borderColor: "blue",
-    backgroundColor: "blue",
+    width: 40,
+    height: 40,
+    borderRadius: 40 / 2,
+    borderColor: "#202C40",
+    backgroundColor: "#202C40",
     marginLeft: 5,
     marginBottom: 10,
     textAlign: 'center',
@@ -207,11 +254,11 @@ const styles = StyleSheet.create({
 
   },
   circle_inactive: {
-    width: 70,
-    height: 70,
-    borderRadius: 70 / 2,
+    width: 40,
+    height: 40,
+    borderRadius: 40 / 2,
     borderWidth: 2,
-    borderColor: "blue",
+    borderColor: "#202C40",
     backgroundColor: "white",
     marginLeft: 5,
     marginBottom: 10,
