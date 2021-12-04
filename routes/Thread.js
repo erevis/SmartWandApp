@@ -10,19 +10,20 @@ import { COLORS } from "../components/Colors.js";
 export function Thread({route,navigation}) {
     const {id, title, user_id} = route.params
     const {nav} = navigation
+    const [commentText, setText] = React.useState('');
     
     class CommentThread extends React.Component {
         constructor(props) {
             super(props)
+            this.id = id
         }
         state = {
             comments: [],
             poster: '',
-            keyboardStatus: undefined
         }
 
         componentDidMount() {
-            axios.get(SETTINGS.url+'/comment/')
+             axios.get(SETTINGS.url+'/comment/')
               .then((response)=>{
                 const comments = response.data
                 this.setState({comments})
@@ -32,34 +33,16 @@ export function Thread({route,navigation}) {
                 const poster = response.data.email
                 this.setState({poster})
               })
-            this.keyboardDidShowSubscription = Keyboard.addListener(
-            'keyboardDidShow',
-            () => {
-                this.setState({ keyboardStatus: 'Keyboard Shown' });
-            },
-            );
-            this.keyboardDidHideSubscription = Keyboard.addListener(
-            'keyboardDidHide',
-            () => {
-                this.setState({ keyboardStatus: 'Keyboard Hidden' });
-            },
-            );
         }
 
-        componentWillUnmount() {
-            this.keyboardDidShowSubscription.remove();
-            this.keyboardDidHideSubscription.remove();
-        }
+
 
         render() {
             const { navigate } = {nav}  
             const { comments , poster} = this.state
+
             return (
                 <View style={{flex:1}}>
-                    <TextInput
-                        onSubmitEditing={Keyboard.dismiss}
-                        placeholder='Click here…'
-                    />
                     <View style={styles.post_card}>
                         <Text style={styles.user_text}>User: {poster}</Text>
                         <Text style={styles.title_text}>{title}</Text>
@@ -67,8 +50,15 @@ export function Thread({route,navigation}) {
                     {
                         comments.map((comment)=><Comment id={comment.id} post_id={comment.post_id} parent_id={comment.parent_id} text={comment.text} user_id={comment.user_id} navigation={{nav}}/>)
                     }
+                    <TextInput
+                        placeholder='Click here…'
+                        defaultValue={commentText}
+                        onChangeText={commentText=>setText(commentText)}
+                    />
                     <View style={styles.comment_button}> 
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{
+                            axios.post(SETTINGS.url+"/comment/", {post_id:this.id,parent_id:0,text:commentText,user_id:5})
+                        }}>
                             <Text>Comment</Text>
                         </TouchableOpacity>
                     </View>
@@ -105,9 +95,6 @@ const styles = StyleSheet.create({
       fontSize: 10
     },
     comment_button: {
-        flex:1,
-        position: 'absolute',
-        bottom:0,
         backgroundColor: COLORS.color4,
         marginLeft:10,
         marginRight:10,

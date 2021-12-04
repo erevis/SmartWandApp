@@ -16,7 +16,7 @@ export function Account() {
       <View style={styles.container}>
         <View style={styles.accountCard}>
           <MaterialCommunityIcons name="account-circle" size={50} color="black" />
-          <Text style={styles.title}>Hi, (Name)</Text>
+          <Text style={styles.title}>Hi, Evan</Text>
         </View>
 
         <TouchableOpacity style={styles.button} onPress={() => { ref.current && ref.current.navigate('Personal Info') }}>
@@ -48,7 +48,7 @@ export function Account() {
           <Stack.Screen name="Account" component={Default}
             options={{
               headerStyle: {
-                backgroundColor: COLORS.bottom,
+                backgroundColor: '#9095a0',
               },
               headerTintColor: COLORS.background,
             }}
@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
     color: COLORS.background,
   },
   accountCard: {
+    margin: 20,
     flexDirection: "row",
     flexWrap: "wrap"
   },
