@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1636434585092" clover="3.2.0">
+  <project timestamp="1636434585092" name="All files">
+    <metrics statements="119" coveredstatements="66" conditionals="29" coveredconditionals="2" methods="64" coveredmethods="16" elements="212" coveredelements="84" complexity="0" loc="119" ncloc="119" packages="3" files="21" classes="21"/>
+    <package name="smart-wand-app">
+      <metrics statements="31" coveredstatements="17" conditionals="7" coveredconditionals="2" methods="17" coveredmethods="5"/>
+      <file name="App.js" path="C:\Users\Evan\Documents\smart-wand-app\App.js">
+        <metrics statements="31" coveredstatements="17" conditionals="7" coveredconditionals="2" methods="17" coveredmethods="5"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="79" count="2" type="stmt"/>
+        <line num="80" count="2" type="stmt"/>
+        <line num="82" count="2" type="stmt"/>
+        <line num="84" count="2" type="stmt"/>
+        <line num="128" count="0" type="stmt"/>
+        <line num="144" count="2" type="stmt"/>
+        <line num="146" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="148" count="0" type="stmt"/>
+        <line num="154" count="0" type="stmt"/>
+        <line num="160" count="0" type="stmt"/>
+        <line num="179" count="2" type="stmt"/>
+        <line num="181" count="2" type="stmt"/>
+        <line num="184" count="2" type="stmt"/>
+        <line num="185" count="2" type="stmt"/>
+        <line num="194" count="0" type="stmt"/>
+        <line num="197" count="2" type="stmt"/>
+        <line num="200" count="2" type="stmt"/>
+        <line num="201" count="2" type="stmt"/>
+        <line num="208" count="0" type="stmt"/>
+        <line num="210" count="0" type="stmt"/>
+        <line num="217" count="0" type="stmt"/>
+        <line num="223" count="2" type="stmt"/>
+        <line num="259" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="smart-wand-app.components">
+      <metrics statements="55" coveredstatements="35" conditionals="22" coveredconditionals="0" methods="28" coveredmethods="11"/>
+      <file name="Account.js" path="C:\Users\Evan\Documents\smart-wand-app\components\Account.js">
+        <metrics statements="6" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="23" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+      </file>
+      <file name="AuthContext.js" path="C:\Users\Evan\Documents\smart-wand-app\components\AuthContext.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+      <file name="Background.js" path="C:\Users\Evan\Documents\smart-wand-app\components\Background.js">
+        <metrics statements="22" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="3"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
+        <line num="61" count="2" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="73" count="2" type="stmt"/>
+        <line num="105" count="1" type="stmt"/>
+        <line num="106" count="2" type="stmt"/>
+        <line num="108" count="2" type="stmt"/>
+        <line num="109" count="0" type="stmt"/>
+        <line num="110" count="0" type="stmt"/>
+        <line num="116" count="0" type="stmt"/>
+        <line num="120" count="2" type="stmt"/>
+      </file>
+      <file name="Colors.js" path="C:\Users\Evan\Documents\smart-wand-app\components\Colors.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="5" type="stmt"/>
+      </file>
+      <file name="Education.js" path="C:\Users\Evan\Documents\smart-wand-app\components\Education.js">
+        <metrics statements="8" coveredstatements="5" conditionals="6" coveredconditionals="0" methods="5" coveredmethods="2"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="74" count="2" type="stmt"/>
+      </file>
+      <file name="Progress.js" path="C:\Users\Evan\Documents\smart-wand-app\components\Progress.js">
+        <metrics statements="8" coveredstatements="5" conditionals="6" coveredconditionals="0" methods="5" coveredmethods="2"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="74" count="2" type="stmt"/>
+      </file>
+      <file name="Therapy.js" path="C:\Users\Evan\Documents\smart-wand-app\components\Therapy.js">
+        <metrics statements="9" coveredstatements="5" conditionals="8" coveredconditionals="0" methods="6" coveredmethods="2"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="23" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="29" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="32" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="113" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="smart-wand-app.routes">
+      <metrics statements="33" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="19" coveredmethods="0"/>
+      <file name="Achievements.js" path="C:\Users\Evan\Documents\smart-wand-app\routes\Achievements.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+      </file>
+      <file name="Articles.js" path="C:\Users\Evan\Documents\smart-wand-app\routes\Articles.js">
+        <metrics statements="5" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+      </file>
+      <file name="Challenges.js" path="C:\Users\Evan\Documents\smart-wand-app\routes\Challenges.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+      </file>
+      <file name="Discovery.js" path="C:\Users\Evan\Documents\smart-wand-app\routes\Discovery.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+      </file>
+      <file name="Firm.js" path="C:\Users\Evan\Documents\smart-wand-app\routes\Firm.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+      </file>
+      <file name="Forum.js" path="C:\Users\Evan\Documents\smart-wand-app\routes\Forum.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+      </file>
+      <file name="Manual.js" path="C:\Users\Evan\Documents\smart-wand-app\routes\Manual.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+      </file>
+      <file name="Moderate.js" path="C:\Users\Evan\Documents\smart-wand-app\routes\Moderate.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+      </file>
+      <file name="Overview.js" path="C:\Users\Evan\Documents\smart-wand-app\routes\Overview.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+      </file>
+      <file name="Personal.js" path="C:\Users\Evan\Documents\smart-wand-app\routes\Personal.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+      </file>
+      <file name="Premade.js" path="C:\Users\Evan\Documents\smart-wand-app\routes\Premade.js">
+        <metrics statements="6" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+      </file>
+      <file name="Soft.js" path="C:\Users\Evan\Documents\smart-wand-app\routes\Soft.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+      </file>
+      <file name="Tutorial.js" path="C:\Users\Evan\Documents\smart-wand-app\routes\Tutorial.js">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
