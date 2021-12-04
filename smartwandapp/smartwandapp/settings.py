@@ -87,7 +87,7 @@ REST_FRAMEWORK = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'smartwanddb',
+        'NAME': 'heroku_277ef23ebfa1ab5',
         'USER': 'b73f832b013a06',
         'PASSWORD': '313bc23c',
         'HOST': 'us-cdbr-east-04.cleardb.com',
