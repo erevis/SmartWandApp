@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': 'smartwanddb',
         'USER': 'root',
         'PASSWORD': 'password',
-        'HOST': '127.0.0.1',
+        'HOST': 'smart-wand-db.herokuapp.com',
         'PORT': '3306',
     }
 }
