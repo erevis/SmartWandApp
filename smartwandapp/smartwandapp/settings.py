@@ -88,9 +88,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'smartwanddb',
-        'USER': 'root',
-        'PASSWORD': 'password',
-        'HOST': 'smart-wand-db.herokuapp.com',
+        'USER': 'b73f832b013a06',
+        'PASSWORD': '313bc23c',
+        'HOST': 'us-cdbr-east-04.cleardb.com',
         'PORT': '3306',
     }
 }
