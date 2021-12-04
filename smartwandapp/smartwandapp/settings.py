@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-38$opyc2*^t10^f#=qn3#i8vwbi#(_0ps%8hv$25!h7hxv+#=w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['testsmartwand.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['smart-wand-db.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
