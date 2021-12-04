@@ -124,11 +124,13 @@ export default function Login() {
         console.log(e)
       }
 
+      userToken = 'abc'
+
       // After restoring token, we may need to validate it in production apps
       if (userToken != null) {
         // This will switch to the App screen or Auth screen and this loading
         // screen will be unmounted and thrown away.
-        dispatch({ type: 'RESTORE_TOKEN', token: userToken });
+       dispatch({ type: 'RESTORE_TOKEN', token: userToken });
       }
     };
 

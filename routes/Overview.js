@@ -214,6 +214,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 5,
   },
+<<<<<<< HEAD
   // scrollView: {
   //   backgroundColor: '#ADD8E6',
   //   paddingLeft: 20,
@@ -226,6 +227,8 @@ const styles = StyleSheet.create({
   //   snapToAlignment: 'center',
 
   // },
+=======
+>>>>>>> 2137ed192c0517715dae0e03b345054160aa1590
   cards: {
     //display: 'flex',
     alignItems: 'center',

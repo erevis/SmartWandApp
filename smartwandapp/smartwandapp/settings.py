@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-38$opyc2*^t10^f#=qn3#i8vwbi#(_0ps%8hv$25!h7hxv+#=w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['testsmartwand.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['smart-wand-db.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -87,10 +87,10 @@ REST_FRAMEWORK = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'smartwanddb',
-        'USER': 'root',
-        'PASSWORD': 'password',
-        'HOST': '127.0.0.1',
+        'NAME': 'heroku_277ef23ebfa1ab5',
+        'USER': 'b73f832b013a06',
+        'PASSWORD': '313bc23c',
+        'HOST': 'us-cdbr-east-04.cleardb.com',
         'PORT': '3306',
     }
 }
@@ -113,7 +113,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = 'account.CustomUser'
 
 
 # Internationalization

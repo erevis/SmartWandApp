@@ -1,3 +1,3 @@
 export const SETTINGS = {
-    url: 'http://localhost:8000',
+    url: 'https://smart-wand-db.herokuapp.com',
 }

@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     }, 
     comment: {
-        backgroundColor: COLORS.color1,
+        backgroundColor: COLORS.color5,
         marginTop:10,
         marginLeft:10,
         marginRight:10,
