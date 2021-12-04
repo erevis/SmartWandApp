@@ -86,15 +86,15 @@ REST_FRAMEWORK = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'smartwanddb',
+        'USER': 'root',
+        'PASSWORD': 'password',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
-        # 'USER': 'root',
-        # 'PASSWORD': 'password',
-        # 'HOST': '127.0.0.1',
-        # 'PORT': '3306',
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
