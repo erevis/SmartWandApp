@@ -1,1 +1,1 @@
-web: gunicorn smartwandapp.wsgi --log-file -
+web: gunicorn smartwandapp.smartwandapp.wsgi --log-file -
