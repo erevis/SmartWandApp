@@ -72,6 +72,6 @@ See the [project website](https://smartwandsite.herokuapp.com/) for trello. Cont
 
 Noah Willen: Django Backend, App Navigation, Forum
 
-Evan Revis: Signin
+Evan Revis: Project Leader, Signin, Designer
 
-Javier Serrato Rojas: Client Manager, Progress
+Javier Serrato Rojas: Client Manager, Progress, Designer
